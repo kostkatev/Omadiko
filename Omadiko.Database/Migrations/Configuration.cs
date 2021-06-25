@@ -48,7 +48,6 @@ namespace Omadiko.Database.Migrations
 
             context.SaveChanges();
 
-
             if (!context.Roles.Any(x => x.Name == "Admin"))
             {
                 var store = new RoleStore<IdentityRole>(context);
@@ -57,7 +56,6 @@ namespace Omadiko.Database.Migrations
 
                 manager.Create(role);
             }
-
 
             var PasswordHash = new PasswordHasher();
             if (!context.Users.Any(x => x.UserName == "admin@admin.net"))
@@ -74,14 +72,6 @@ namespace Omadiko.Database.Migrations
                 manager.Create(user);
                 manager.AddToRole(user.Id, "Admin");
             }
-
-
-
-
-
-
-
-
         }
     }
 }
