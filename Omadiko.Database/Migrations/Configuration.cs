@@ -4,6 +4,7 @@ namespace Omadiko.Database.Migrations
     using Microsoft.AspNet.Identity.EntityFramework;
     using Omadiko.Entities;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -20,8 +21,31 @@ namespace Omadiko.Database.Migrations
             Product p1 = new Product() { Name = "TurboX", Price = 550 };
             Product p2 = new Product() { Name = "HP", Price = 200 };
             Product p3 = new Product() { Name = "Samsung", Price = 300 };
+            Product p4 = new Product() { Name = "Apple", Price = 900 };
+            Product p5 = new Product() { Name = "HP", Price = 800 };
+            Product p6 = new Product() { Name = "LG", Price = 900 };
 
-            context.Products.AddOrUpdate(x => new { x.Name }, p1, p2, p3);
+
+            Customer c1 = new Customer() { FirstName = "Hector", LastName = "Gkatsos" };
+            c1.Products = new List<Product>() { p1, p2, p3 };
+            Customer c2 = new Customer() { FirstName = "Kostas", LastName = "Katevas" };
+            Customer c3 = new Customer() { FirstName = "Thodoris", LastName = "Papamokos" };
+            c3.Products = new List<Product>() { p1 };
+            Customer c4 = new Customer() { FirstName = "Elina", LastName = "Zafeiri" };
+            c4.Products = new List<Product>() { p1, p2 };
+            Customer c5 = new Customer() { FirstName = "Maria", LastName = "Pappa" };
+            c5.Products = new List<Product>() { p4, p2, p3 };
+            Customer c6 = new Customer() { FirstName = "George", LastName = "Pappas" };
+            c6.Products = new List<Product>() { p5, p6, p3 };
+            Customer c7 = new Customer() { FirstName = "Kostas", LastName = "Markou" };
+            c7.Products = new List<Product>() { p6, p4, p3 };
+            Customer c8 = new Customer() { FirstName = "Eleni", LastName = "Pappa" };
+            c8.Products = new List<Product>() { p4, p1, p3 };
+
+            context.Products.AddOrUpdate(x => new { x.Name }, p1, p2, p3, p4, p5, p6);
+            context.Customers.AddOrUpdate(x => new { x.FirstName, x.LastName }, c1, c2, c3, c4, c5, c6, c7, c8);
+            
+
             context.SaveChanges();
 
             if (!context.Roles.Any(x => x.Name == "Admin"))
