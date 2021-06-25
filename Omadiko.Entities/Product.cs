@@ -22,6 +22,6 @@ namespace Omadiko.Entities
         public double Price { get; set; }
 
         //navigation properties
-        
+        public virtual ICollection<Customer> Customers { get; set; }
     }
 }

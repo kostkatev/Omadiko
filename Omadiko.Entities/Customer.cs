@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Omadiko.Entities
 {
-    class Customer
+    public class Customer
     {
         public int CustomerId { get; set; }
         public string FirstName { get; set; }
