@@ -22,6 +22,5 @@ namespace Omadiko.Database
         {
             return new ApplicationDbContext();
         }
-
     }
 }
