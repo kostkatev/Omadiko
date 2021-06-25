@@ -18,7 +18,8 @@ namespace Omadiko.WebApp.Controllers
         // GET: Customer
         public ActionResult Index()
         {
-            return View(db.Customers.ToList());
+            var customers = db.Customers.ToList();
+            return View(customers);
         }
 
         // GET: Customer/Details/5
