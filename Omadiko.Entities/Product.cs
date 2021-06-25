@@ -20,5 +20,8 @@ namespace Omadiko.Entities
 
         [CustomValidation(typeof(ValidationMethods), Methods.ValidateGreaterThanZero)]
         public double Price { get; set; }
+
+        //navigation properties
+        
     }
 }
