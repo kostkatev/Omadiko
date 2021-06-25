@@ -28,7 +28,7 @@ namespace Omadiko.Console2
 
             foreach (var item in repo1.GetAll())
             {
-                Console.WriteLine(item.FirstName);
+                Console.WriteLine(item.FirstName + " " + item.LastName);
             }
 
 
