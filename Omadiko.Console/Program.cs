@@ -23,6 +23,14 @@ namespace Omadiko.Console2
                 Console.WriteLine(item.Name);
             }
 
+            CustomerRepository repo1 = new CustomerRepository();
+
+
+            foreach (var item in repo1.GetAll())
+            {
+                Console.WriteLine(item.FirstName);
+            }
+
 
             //foreach (var item in repo.FilterByName("a"))
             //{

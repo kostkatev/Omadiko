@@ -9,7 +9,7 @@ using System.Data.Entity;
 
 namespace Omadiko.RepositoryServices
 {
-    class CustomerRepository
+    public class CustomerRepository
     {
         ApplicationDbContext db = new ApplicationDbContext();
 
