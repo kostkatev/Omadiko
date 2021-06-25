@@ -12,16 +12,16 @@ namespace Omadiko.Console2
     {
         static void Main(string[] args)
         {
-            ProductRepository repo = new ProductRepository();
+            //ProductRepository repo = new ProductRepository();
 
-            Product p = new Product() { Name = "Lakis", Price = 50000 };
+            //Product p = new Product() { Name = "Lakis", Price = 50000 };
 
-            repo.Insert(p);
+            //repo.Insert(p);
 
-            foreach (var item in repo.GetAll())
-            {
-                Console.WriteLine(item.Name);
-            }
+            //foreach (var item in repo.GetAll())
+            //{
+            //    Console.WriteLine(item.Name);
+            //}
 
             CustomerRepository repo1 = new CustomerRepository();
 
@@ -37,8 +37,7 @@ namespace Omadiko.Console2
             //    Console.WriteLine(item.Name);
             //}
 
-
-
+            
         }
     }
 }
