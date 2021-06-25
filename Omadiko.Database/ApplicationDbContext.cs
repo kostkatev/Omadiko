@@ -17,6 +17,7 @@ namespace Omadiko.Database
         }
        
         public DbSet<Product> Products { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         public static ApplicationDbContext Create()
         {
