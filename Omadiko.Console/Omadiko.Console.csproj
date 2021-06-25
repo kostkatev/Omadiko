@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Elina.cs" />
+    <Compile Include="Ioannou.cs" />
     <Compile Include="Katevas.cs" />
     <Compile Include="Papamokos.cs" />
     <Compile Include="Program.cs" />
